@@ -33,7 +33,7 @@ function exportToExcel() {
   const rows = parsedData.map(row => {
     let description = row["Description"] || "";
     let match = description.match(/\b\d{6}\b/);
-    let reference = match ? match[0] : "999999";
+    let reference = match ? match[0] : "";
 
     // Put reference under Matter no
     let matterNo = reference;
@@ -42,30 +42,6 @@ function exportToExcel() {
 
   const worksheetData = [headers, ...rows];
   const ws = XLSX.utils.aoa_to_sheet(worksheetData);
-
-  // Apply borders + red fill for rows containing 999999 in Matter no
-  const range = XLSX.utils.decode_range(ws["!ref"]);
-  const matterIndex = headers.indexOf("Matter no");
-
-  for (let R = 1; R <= range.e.r; ++R) {
-    let matterCell = ws[XLSX.utils.encode_cell({r: R, c: matterIndex})];
-    let isRed = matterCell && matterCell.v === "999999";
-
-    for (let C = 0; C <= range.e.c; ++C) {
-      let cellAddress = XLSX.utils.encode_cell({r: R, c: C});
-      if (!ws[cellAddress]) ws[cellAddress] = { t: "s", v: "" };
-
-      ws[cellAddress].s = {
-        fill: isRed ? { fgColor: { rgb: "FF0000" } } : undefined, // 🔴 red background
-        border: {
-          top: { style: "thin", color: { rgb: "000000" } },
-          bottom: { style: "thin", color: { rgb: "000000" } },
-          left: { style: "thin", color: { rgb: "000000" } },
-          right: { style: "thin", color: { rgb: "000000" } }
-        }
-      };
-    }
-  }
 
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Transactions");

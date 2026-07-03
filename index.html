@@ -1,57 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Import CSV Data</title>
-  <link rel="stylesheet" href="assets/CSS/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/CSS/index.css" />
 </head>
 <body>
-  <img id="logo" src="https://github.com/ZAmystic/RefrenceLocator/blob/main/assets/Media/VR-logo.png" alt="Logo" class="logo">
-  <div class="upload-wrapper">
-    <h1>Import CSV Data</h1>
-    <p class="subtitle">
-        Streamline your data ingestion process by uploading your CSV files here. Our system will automatically validate and map your fields. 
-        By automatically finding the matter no, from the description field, you can save time and reduce errors. Just upload your file, and let us handle the rest!
-    </p>
+  <header>
+    <h1>Van Rhyns Attorneys</h1>
+    <h2>Tools Portal</h2>
+    <div class="divider"></div>
+  </header>
 
-    <div class="upload-box" id="dropZone">
-      <p id="fileName" class="file-name"></p>
-      <div class="icon">☁️</div>
-      <p class="upload-text">Ready to upload?<br>Select a file from your computer or drag and drop your CSV here.</p>
-      <div class="buttons">
-        <label class="btn">
-          Browse Files
-          <input type="file" id="csvFile" accept=".csv" hidden>
-        </label>
-        <button id="downloadBtn" class="btn secondary" disabled>Download Processed File</button>
-      </div>
-    </div>
+  <div class="cards">
 
-    <div class="info-section">
-      <div class="info-box">
-        <h3>File Requirements</h3>
-        <ul>
-          <li>Maximum file size: 25MB</li>
-          <li>Supported format: Only .csv files</li>
-          <li>Header row required</li>
-          <li>Ensure columns are named Date;Description;Matter no;Amount;Balance</li>
-        </ul>
+    <!-- Card 1: CSV to Excel -->
+    <a href="refrence-converter.html" class="card card--csv">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+          <polyline points="14 2 14 8 20 8"/>
+          <line x1="8" y1="13" x2="16" y2="13"/>
+          <line x1="8" y1="17" x2="16" y2="17"/>
+          <line x1="8" y1="9" x2="10" y2="9"/>
+        </svg>
       </div>
-      <div class="info-box">
-        <h3>Smart Mapping</h3>
-        <p>The system will automatically detect and map columns based on their content, ensuring accurate data ingestion.</p>
+      <h2>CSV to Excel</h2>
+      <p>Convert CSV files into formatted Excel spreadsheets.</p>
+      <div class="card-arrow">
+        Open tool
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
       </div>
-    </div>
+    </a>
+
+    <!-- Card 2: 9* Locator -->
+    <a href="#9star-locator" class="card card--loc">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          <line x1="11" y1="8" x2="11" y2="14"/>
+          <line x1="8" y1="11" x2="14" y2="11"/>
+        </svg>
+      </div>
+      <h2>9* Locator</h2>
+      <p>Search and locate 9-star entries across your data.</p>
+      <div class="card-arrow">
+        Open tool
+        <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </div>
+    </a>
   </div>
 
-  <footer class="footer">
-    <p>MysticDevelopment &copy; 2024 Reference Locator. All rights reserved.</p>
-  </footer>
-
-  <!-- PapaParse for CSV parsing -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-  <!-- SheetJS for Excel export -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-  <script src="assets/JavaScript/script.js"></script>
 </body>
 </html>
