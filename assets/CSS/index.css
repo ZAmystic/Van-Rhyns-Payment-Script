@@ -166,15 +166,25 @@ body {
 
 /* ---------- Footer ---------- */
 
-.site-footer {
-  width: 100%;
-  margin-top: 3rem;
-  padding: 1.1rem 1rem;
-  background-image: linear-gradient(rgb(131, 32, 25), rgb(58, 9, 6));
-  color: #f2e7e9;
+
+.footer {
+  position: fixed;       /* Fixes the footer in place */
+  bottom: 0;             /* Anchors it to the bottom of the viewport */
+  left: 0;               /* Ensures it spans from the left edge */
+  width: 100%;           /* Makes it stretch across the screen */
+  display: flex;
+  justify-content: center;
   text-align: center;
-  font-size: 0.8rem;
-  letter-spacing: 0.02em;
+  margin-top: 40px;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 10px 0px;
+  background-image: linear-gradient(rgb(131, 32, 25), rgb(58, 9, 6));
+}
+
+
+.footer p {
+  margin: 0;
 }
 
 @media (max-width: 640px) {

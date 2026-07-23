@@ -62,7 +62,7 @@ h1 {
 
 .icon {
   font-size: 3rem;
-  margin-bottom: -15px;
+  margin-bottom: -25px;
 }
 
 .upload-text {
@@ -88,7 +88,7 @@ h1 {
 }
 
 .btn:hover {
-  background: rgb(212, 107, 100);
+  background: rgb(173, 80, 73);
 }
 
 .btn.secondary {
@@ -96,7 +96,7 @@ h1 {
   color: #333;
 }
 .btn.secondary:hover {
-  background: #e2e2e2;
+  background: #d4d4d4;
 }
 
 .info-section {
